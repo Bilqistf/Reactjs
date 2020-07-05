@@ -18,4 +18,4 @@ import { Jumbotron, Button } from 'reactstrap';
             </div>
         )
     }
-export default HomePage
+export default HomePage;
