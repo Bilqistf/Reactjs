@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import axios from 'axios'
 import qs from 'querystring'
 import { Table, Container, Button, NavLink } from 'reactstrap'
+import {Link} from 'react-router-dom'
 const api = 'http://localhost:3001'
 class ListComp extends PureComponent {
     constructor(props) {
@@ -42,8 +43,19 @@ class ListComp extends PureComponent {
                                 <td>{mahasiswa.nim}</td>
                                 <td>{mahasiswa.nama}</td>
                                 <td>{mahasiswa.jurusan}</td>
-                                <td>Edit | Hapus</td>
-
+                                <Link to = {
+                                    {
+                                        pathname: `/mahasiswa/Edit`,
+                                        state: {
+                                            id_mahasiswa : mahasiswa.id_mahasiswa,
+                                            nim : mahasiswa.nim,
+                                            nama : mahasiswa.nama,
+                                            jurusan : mahasiswa.jurusan
+                                        }
+                                    }
+                                }>
+                                    <button> Edit </button>
+                                </Link>
                             </tr>
                         )}
                     </tbody>
