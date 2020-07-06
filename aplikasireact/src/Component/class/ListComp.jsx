@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import qs from 'querystring'
-import { Table, Container, Button, NavLink } from 'reactstrap'
-import {Link} from 'react-router-dom'
+import { Table, Container, Button, NavLink , Alert } from 'reactstrap'
+import { Link } from 'react-router-dom'
 const api = 'http://localhost:3001'
 class ListComp extends PureComponent {
     constructor(props) {
@@ -21,10 +21,40 @@ class ListComp extends PureComponent {
         })
 
     }
+    Deletemahasiswa = (id_mahasiswa) => {
+        const { mahasiswa } = this.state
+        const data = qs.stringify({
+            id_mahasiswa: id_mahasiswa
+        })
+        axios.delete(api + '/hapus',
+            {
+                data: data,
+                headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+            }
+        ).then(json => {
+            if (json.data.status === 200) {
+                this.setState({
+                    response: json.data.values,
+                    mahasiswa: mahasiswa.filter(mahasiswa => mahasiswa.id_mahasiswa !== id_mahasiswa),
+                    display: 'block'
+                })
+                this.props.history.push('/mahasiswa')
+            } else {
+                this.setState({
+                    response: json.data.values,
+                    display: 'block'
+                })
+            }
+        })
+    }
+
     render() {
         return (
             <Container>
                 <h2>Data Mahasiswa</h2>
+                <Alert color="success" style={{ display: this.state.display }}>
+                    {this.state.response}
+                </Alert>
                 <NavLink href="/mahasiswa/tambah"><Button color="success">Tambah Data </Button></NavLink>
                 <hr />
                 <Table className="table-bordered">
@@ -43,21 +73,25 @@ class ListComp extends PureComponent {
                                 <td>{mahasiswa.nim}</td>
                                 <td>{mahasiswa.nama}</td>
                                 <td>{mahasiswa.jurusan}</td>
-                                <Link to = {
+                                <Link to={
                                     {
                                         pathname: `/mahasiswa/Edit`,
                                         state: {
-                                            id_mahasiswa : mahasiswa.id_mahasiswa,
-                                            nim : mahasiswa.nim,
-                                            nama : mahasiswa.nama,
-                                            jurusan : mahasiswa.jurusan
+                                            id_mahasiswa: mahasiswa.id_mahasiswa,
+                                            nim: mahasiswa.nim,
+                                            nama: mahasiswa.nama,
+                                            jurusan: mahasiswa.jurusan
                                         }
                                     }
                                 }>
                                     <button> Edit </button>
                                 </Link>
+                                <span> </span>
+                                 <Button onClick={() => this.Deletemahasiswa(mahasiswa.id_mahasiswa)} color="danger"> Delete </Button>
                             </tr>
-                        )}
+                        )
+                        }
+
                     </tbody>
                 </Table>
             </Container>
