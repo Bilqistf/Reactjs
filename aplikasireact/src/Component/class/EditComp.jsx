@@ -76,9 +76,6 @@ class EditComp extends Component {
                           <Col>
                              <button type="button" onClick={()=>this.ubahMahasiswa(this.state.id_mahasiswa)} className="btn btn-success">Update</button>
                        </Col>
-                        <Col>
-                           <Button color="danger">Reset</Button>{' '}
-                      </Col>
                      <Col>
                         <Link to='/mahasiswa'><Button color="secondary">Kembali</Button></Link>
                       </Col>
