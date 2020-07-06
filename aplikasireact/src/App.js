@@ -5,6 +5,7 @@ import NavbarComp from './Component/fungsional/NavbarComp';
 import HomePage from './Component/fungsional/HomePage';
 import About from './Component/fungsional/AboutComp';
 import ListComp from './Component/class/ListComp';
+import TambahComp from './Component/class/TambahComp';
 
 const App = () => {
   return (<BrowserRouter >
@@ -13,6 +14,7 @@ const App = () => {
       <Route exact path="/"component={HomePage}/> 
       <Route exact path="/about"component={About}/> 
       <Route exact path="/mahasiswa"component={ListComp}/> 
+      <Route exact path="/mahasiswa/tambah" component={TambahComp} />
       </Switch>
       </BrowserRouter>
   );
