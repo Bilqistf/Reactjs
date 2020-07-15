@@ -14,11 +14,13 @@ const NavbarComp = (props) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+            
+            <Navbar color="dark" light expand="md">
+                <NavbarBrand href="/">sia perpustakaan</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
+                        
                         <NavItem>
                             <NavLink href="/">Home</NavLink>
                         </NavItem>
@@ -28,10 +30,18 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink href="/mahasiswa" >Mahasiswa </NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/kelas" >Kelas </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/hooks" >Hooks</NavLink>
+                        </NavItem>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
+                    <NavbarText>Search</NavbarText>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </Collapse>
             </Navbar>
+            
         </div>
     )
 }

@@ -7,7 +7,8 @@ import About from './Component/fungsional/AboutComp';
 import ListComp from './Component/class/ListComp';
 import TambahComp from './Component/class/TambahComp';
 import EditComp from './Component/class/EditComp';
-
+import KelasComp from './Component/Hooks/Class/KelasComp';
+import HooksComp from './Component/Hooks/Fungsional/HooksComp';
 const App = () => {
   return (<BrowserRouter >
     <NavbarComp />
@@ -17,6 +18,9 @@ const App = () => {
       <Route exact path="/mahasiswa"component={ListComp}/> 
       <Route exact path="/mahasiswa/tambah" component={TambahComp} />
       <Route exact path="/mahasiswa/edit" component={EditComp} />
+      <Route exact path="/kelas" component={KelasComp} />
+      <Route exact path="/hooks" component={HooksComp} />
+  
       </Switch>
       </BrowserRouter>
   );
