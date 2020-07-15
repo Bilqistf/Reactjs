@@ -9,6 +9,7 @@ import TambahComp from './Component/class/TambahComp';
 import EditComp from './Component/class/EditComp';
 import KelasComp from './Component/Hooks/Class/KelasComp';
 import HooksComp from './Component/Hooks/Fungsional/HooksComp';
+import HooksUseEffects from './Component/Hooks/Fungsional/HooksUseEffects';
 const App = () => {
   return (<BrowserRouter >
     <NavbarComp />
@@ -20,6 +21,9 @@ const App = () => {
       <Route exact path="/mahasiswa/edit" component={EditComp} />
       <Route exact path="/kelas" component={KelasComp} />
       <Route exact path="/hooks" component={HooksComp} />
+      <Route exact path="/useffects" component={HooksUseEffects} />
+
+      
   
       </Switch>
       </BrowserRouter>

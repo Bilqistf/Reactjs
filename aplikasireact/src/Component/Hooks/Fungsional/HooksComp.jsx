@@ -3,7 +3,7 @@ import TampilComp from './TampilComp';
 const HooksComp = () => {
      const [jumlah, tambahJumlah] = useState(0)
     //login
-     const [dataLogin, setDataLogin] = useState({username:'Bilqist', token: '123abcd', isLogin: true})
+     const [dataLogin] = useState({username:'Bilqist', token: '123abcd', isLogin: true})
  //Cek kondisi sudah login / belum
    let tampil;
         if(dataLogin.isLogin){

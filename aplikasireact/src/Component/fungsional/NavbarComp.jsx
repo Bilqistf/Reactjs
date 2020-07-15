@@ -36,6 +36,9 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink href="/hooks" >Hooks</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/useffects" >Use Effects</NavLink>
+                        </NavItem>
                     </Nav>
                     <NavbarText>Search</NavbarText>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

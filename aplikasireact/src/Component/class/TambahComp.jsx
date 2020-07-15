@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
+
 const api = 'http://localhost:3001'
 class TambahComp extends PureComponent {
     constructor(props) {
