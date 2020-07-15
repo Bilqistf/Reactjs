@@ -1,5 +1,9 @@
 import React, { useState } from 'react'; 
+import { CartContext } from '../../CartContext';
+import { useContext } from 'react';
+
 import {
+    Button,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -12,6 +16,7 @@ import {
 const NavbarComp = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const { value, setValue } = useContext(CartContext)
     return (
         <div>
             
@@ -39,9 +44,18 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink href="/useffects" >Use Effects</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink href="/produk" >Produk</NavLink>
+                        </NavItem>
+                        
                     </Nav>
-                    <NavbarText>Search</NavbarText>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <NavbarText>
+                    <Button color="danger">
+                        <i className="fa fa-shoping-cart"></i>
+                        <span className="badge badge-light">{value}</span>
+                        </Button>
+                        </NavbarText>
+    
                 </Collapse>
             </Navbar>
             
