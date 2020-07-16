@@ -11,6 +11,7 @@ import HooksComp from './Component/Hooks/Fungsional/HooksComp';
 import HooksUseEffects from './Component/Hooks/Fungsional/HooksUseEffects';
 import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Fungsional/ProductComp';
+import HookReducer from './Component/Hooks/Fungsional/HooksReducer';
 const App = () => {
 
   const[value, setValue] = useState(10)
@@ -28,7 +29,7 @@ const App = () => {
       <Route exact path="/hooks" component={HooksComp} />
       <Route exact path="/useffects" component={HooksUseEffects} />
       <Route exact path="/produk" component={ProductComp} />
-    
+      <Route exact path="/reducer" component={HookReducer} />
 
       
   

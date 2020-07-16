@@ -47,7 +47,9 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink href="/produk" >Produk</NavLink>
                         </NavItem>
-                        
+                        <NavItem>
+                            <NavLink href="/reducer" >Reducer</NavLink>
+                        </NavItem>
                     </Nav>
                     <NavbarText>
                     <Button color="danger">
