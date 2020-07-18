@@ -16,10 +16,11 @@ function HookReducer() {
         <Container>
             <br/>
             <Row>
-                <Col xs="6">col1</Col>
+                <Col xs="6">
                 <Card>
                     <CardImg top width="80%" src="https://placeimg.com/640/480/tech" alt="Card image cap" />
                 </Card>
+                </Col>
                 <Col xs="6">
                     <h3> Action Figure Naruto </h3>
                     <p>Harga</p> 
