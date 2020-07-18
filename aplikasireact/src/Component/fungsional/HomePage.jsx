@@ -1,6 +1,6 @@
 import React from 'react'
 import { Jumbotron, Button } from 'reactstrap';
-import {CartContext} from '../../CartContext';
+//import {CartContext} from '../../CartContext';
     function HomePage() {
         return (
             <div>

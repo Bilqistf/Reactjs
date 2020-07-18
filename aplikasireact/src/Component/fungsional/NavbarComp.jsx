@@ -16,7 +16,7 @@ import {
 const NavbarComp = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    const { value, setValue } = useContext(CartContext)
+    const { value } = useContext(CartContext)
     return (
         <div>
             
