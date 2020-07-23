@@ -1,15 +1,44 @@
 import React from 'react'
-// import Blog from './Blog'
-import Produk from '../class/Produk';
-const Home = () => {
-    return<div>
-            <Produk nama="Macbook Pro 2019" stock="10" harga="53.000.000"/>
-            <Produk nama="Macbook Pro 2020" stock="15" harga="63.000.000"/>
-            <Produk nama="Macbook Pro 2021" stock="50" harga="33.000.000"/>
-            <Produk nama="Macbook Pro 2022" stock="100" harga="73.000.000"/>
-            <Produk nama="Macbook Pro 2023" stock="108" harga="43.000.000"/>
-            <Produk nama="Macbook Pro 2024" stock="200" harga="83.000.000"/>
-            </div>
-}
-        
+
+import { UncontrolledCarousel } from 'reactstrap';
+
+const items = [
+     
+     {
+       src: 'http://www.eco-bravo.ca/wp-content/uploads/2019/09/windows22-1440x400.jpg',
+
+       altText: 'Slide 1',
+       caption: 'Slide 1',
+       header: 'Sistem',
+       key: '1'
+     },
+     {
+       src: 'https://evonomics.com/wp-content/uploads/2020/07/kotler.jpg',
+       altText: 'Slide 2',
+       caption: '',
+       header: 'Pepustakaan',
+       key: 'Informasi'
+     },
+     {
+       src: 'https://metztiles.com.au/wp-content/uploads/bfi_thumb/BANNER_FORTEZZA_ISLAND_GREY-o9mk1c01njwwhdrjczoj9s8ugt7o5f0pxsdnmrqmjk.png',
+       altText: 'Perpustakaan',
+       caption: '',
+       header: '',
+       key: '3'
+     },
+     {
+      src: 'https://applaudible.net/wp-content/uploads/2020/05/Addressing-Mental-Health-1440-x-960-1440x400.jpg',
+      altText: 'Perpustakaan',
+      caption: '',
+      header: '',
+      key: '4'
+    },
+     {
+         
+     }
+     
+   ];
+   
+   const Home = () => <UncontrolledCarousel items={items} />;
+
 export default Home;
