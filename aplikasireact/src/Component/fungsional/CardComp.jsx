@@ -1,33 +1,33 @@
-import React from 'react'; 
-import {Link} from 'react-router-dom'
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
-} from 'reactstrap';
-function CardComp(props) {
-    return (
-        <div>
-            <Card>
-                <CardImg top width="100%" src="https://placeimg.com/640/480/tech" alt="Card image cap" />
-                <CardBody>
-                    <CardTitle><h3>{props.judul}</h3></CardTitle>
-                    <CardSubtitle>{props.tanggal}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>
-                        <Link to = {
-                            {
-                                pathname : `/detail/${props.id}`,
-                                state : {
-                                    judul: props.judul,
-                                    tanggal: props.tanggal
-                                }
-                            }
-                        }>Detail</Link>
-                    </Button>
-                </CardBody>
-            </Card>
-        </div>
-    )
+import React from 'react';
+//import { Link } from 'react-router-dom';
 
-} 
-export default CardComp; 
+import {Button, Row, Col, CardBody, CardImg} from 'reactstrap';
+
+function CardComp(props) {
+        return (
+            <Row>
+      <Col sm="6">
+        <CardBody>
+        <CardImg top width="5%" src="https://www.gramedia.com/blog/content/images/size/w1000/2019/07/Erasmus-Huis2-mldspot-fin.jpg" alt="Card image cap" />
+        <Col sm="12" md={{ size: 6, offset: 3 }}>
+          <h3>PEMINJAMAN</h3>
+          
+          <Button>BUKU DIPINJAM</Button>
+          </Col>
+        </CardBody>
+      </Col>
+
+      <Col sm="6">
+        <CardBody>
+        <CardImg top width="5%" src="https://www.gramedia.com/blog/content/images/size/w1000/2019/07/Erasmus-Huis2-mldspot-fin.jpg" alt="Card image cap" />
+        <Col sm="12" md={{ size: 6, offset: 3 }}>
+          <h3>PENGEMBALIAN</h3>
+          
+          <Button>BUKU KEMBALI</Button>
+          </Col>
+        </CardBody>
+      </Col>
+    </Row>
+        )
+    }
+export default CardComp;

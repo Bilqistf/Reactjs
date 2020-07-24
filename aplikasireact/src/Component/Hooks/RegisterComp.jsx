@@ -1,85 +1,45 @@
-import React, { PureComponent } from 'react';
-import axios from 'axios'
-import { Alert, Container, Col, Row, Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import React from 'react';
+import { Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-const qs = require('querystring')
-const api = 'http://localhost:3001'
-export default class RegisterComp extends PureComponent {
-    constructor(props) {
-        super(props)
-        this.state = {
-            username: '',
-            password: '',
-            status: '2',
-            response: '',
-            color: '',
-            display: 'none'
-        }
-    }
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
-    register = () => {
-        axios.post(api + '/auth/api/v1/register', {
-            username: this.state.username,
-            password: this.state.password,
-            status: this.state.status
-        }).then(json => {
-            if (json.data.status === 200) {
-                if (json.data.values === 'User baru telah ditambahkan') {
-                    this.setState({
-                        response: json.data.values,
-                        color: 'success',
-                        display: 'block',
-                    })
-                }
-                else if (json.data.values === 'Username sudah terdaftar!') {
-                    this.setState({
-                        response: json.data.values,
-                        color: 'danger',
-                        display: 'block'
-                    })
-                }
-            } else {
-                this.setState({
-                    response: json.data.values,
-                    display: 'block'
-                })
+const RegisterComp = () => {
 
-            }
-        })
-        this.setState({ username: '' })
-        this.setState({ password: '' })
-    }
-
-    render() {
         return (
-            <Container>
-                <Alert color={this.state.color} style={{ display: this.state.display }}>
-                    {this.state.response}
-                </Alert>
-                <Form className="form">
-                    <Label for="Username">Username</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="username" id="UsernameField" value={this.state.username} onChange={this.handleChange} placeholder="Masukan username" />
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label for="Password">Password</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="password" name="password" id="PasswordField" value={this.state.password} onChange={this.handleChange} placeholder="Masukan password" />
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Button onClick={this.register}>REGISTER</Button>
-                </Form>
-            </Container>
-        );
+            <div className="container" style = {{marginTop:"50px"}}>
+                <div className="row justify-content-center">
+                        <div className="col-md-6">
+                        <Col sm="8" md={{ size: 'auto', offset: 3 }}><h2>ADMIN BARU </h2></Col>
+                            <form>
+                                <div className="form-group">
+                                    <label >NISN </label>
+                                     <input type="nik" className="form-control"  placeholder="Masukan NIK" />
+                                </div>
+                                <div className="form-group">
+                                    <label >Nama Lengkap</label>
+                                    <input type="namalengkap" className="form-control"  placeholder="Masukan Nama Lengkap" />
+                                </div>
+                                <div className="form-group">
+                                    <label >Email</label>
+                                    <input type="email" className="form-control"  placeholder="Masukan Nama Email" />
+                                </div>
+                                <div className="form-group">
+                                    <label >Password</label>
+                                    <input type="password" className="form-control"  placeholder="Masukan Nama Password" />
+                                </div>
+                                <div className="form-group">
+                                    <label >Nomer Handphone</label>
+                                    <input type="nomor" className="form-control"  placeholder="Masukan Nomer Handhphone" />
+                                </div>
+                                
+                                    <button type="submit" class="btn btn-primary  btn-block">REGISTRASI</button> 
+
+                                    <Link to="/menu" button type="submit" class="btn btn-primary btn-block">B A T A L</Link> 
+
+                            </form>
+                        </div>
+                </div>
+                </div>
+         );
     }
-}
 
-
+export default RegisterComp;

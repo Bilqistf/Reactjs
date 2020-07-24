@@ -1,53 +1,45 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
+import {Collapse, Navbar, NavbarToggler, Nav, NavItem, NavbarBrand} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    NavbarText,
-    //Button
-} from 'reactstrap';
-//import { AuthContext } from '../../App';
-const NavbarComp = (props) => {
+  function NavbarComp () {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+
+
     return (
         <div>
-
-            <Navbar color="dark" light expand="md">
-                <NavbarBrand href="/home">sia perpustakaan</NavbarBrand>
+            <Navbar color="light" light expand="md">
+            <NavbarBrand href="/home">sia perpustakaan</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                    <NavItem>
-                            <NavLink href="/login" >Login</NavLink>
+                        <NavItem>
+                            <NavLink to="/home" className="nav-link">HOME</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <NavLink to="/login" className="nav-link" >LOGIN</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/Menu">Menu</NavLink>
+                            <NavLink to="/menu" className="nav-link" > MENU </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/mahasiswa" >Aktivitas </NavLink>
+                            <NavLink to="/aktivitas" className="nav-link" >AKTIVITAS</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/useffects" >Layanan</NavLink>
+                            <NavLink to="/layanan" className="nav-link" >LAYANAN</NavLink>
                         </NavItem>
+
+                        
+
                         
                     </Nav>
-                    <NavbarText>
-                        
-                    </NavbarText>
 
+                
                 </Collapse>
             </Navbar>
-
         </div>
     )
 }
-export default NavbarComp 
+
+export default NavbarComp;
