@@ -1,6 +1,5 @@
 import React, {useState, Fragment } from 'react';
 import { Button, Form, FormGroup, Label, Col, Input,  CardImg } from 'reactstrap';
-
 import axios from 'axios'
 import { useContext } from 'react';
 import { AuthContext } from '../../App';
@@ -104,7 +103,7 @@ function LoginComp() {
                             }
                             </Button>
                     </Form>
-                    <p>Belum Punya akun?  </p>
+                    <p>Belum Punya akun? </p>
                 </Col>
 
             </Row>

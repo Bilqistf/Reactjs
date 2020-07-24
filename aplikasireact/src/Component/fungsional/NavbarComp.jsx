@@ -24,10 +24,10 @@ const NavbarComp = (props) => {
                     <Nav className="mr-auto" navbar>
                         
                         <NavItem>
-                            <NavLink href="/Homepage">Home</NavLink>
+                            <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/about">Menu</NavLink>
+                            <NavLink href="/Menu">Menu</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/mahasiswa" >Aktivitas </NavLink>
