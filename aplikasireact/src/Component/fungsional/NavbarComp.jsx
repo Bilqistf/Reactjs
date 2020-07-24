@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState} from 'react';
 
 import {
     Collapse,
@@ -8,21 +8,24 @@ import {
     Nav,
     NavItem,
     NavLink,
-    NavbarText
+    NavbarText,
+    //Button
 } from 'reactstrap';
+//import { AuthContext } from '../../App';
 const NavbarComp = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-    
     return (
         <div>
-            
+
             <Navbar color="dark" light expand="md">
                 <NavbarBrand href="/home">sia perpustakaan</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
-                        
+                    <NavItem>
+                            <NavLink href="/login" >Login</NavLink>
+                        </NavItem>
                         <NavItem>
                             <NavLink href="/">Home</NavLink>
                         </NavItem>
@@ -35,13 +38,15 @@ const NavbarComp = (props) => {
                         <NavItem>
                             <NavLink href="/useffects" >Layanan</NavLink>
                         </NavItem>
+                        
                     </Nav>
                     <NavbarText>
-                        </NavbarText>
-    
+                        
+                    </NavbarText>
+
                 </Collapse>
             </Navbar>
-            
+
         </div>
     )
 }

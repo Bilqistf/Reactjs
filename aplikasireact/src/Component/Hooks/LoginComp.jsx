@@ -1,5 +1,6 @@
 import React, {useState, Fragment } from 'react';
 import { Button, Form, FormGroup, Label, Col, Input,  CardImg } from 'reactstrap';
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useContext } from 'react';
 import { AuthContext } from '../../App';
@@ -8,7 +9,6 @@ const qs = require('querystring')
 const api = 'http://localhost:3001'
 function LoginComp() {
     const { dispatch } = useContext(AuthContext)
-
     const initialState = {
         email: "",
         password: "",
@@ -58,6 +58,11 @@ function LoginComp() {
                 }
                 throw res
             })
+            setData({
+                ...data,
+                username:'',
+                password:''
+            })
     }
     return (
         <Fragment>
@@ -103,7 +108,7 @@ function LoginComp() {
                             }
                             </Button>
                     </Form>
-                    <p>Belum Punya akun? </p>
+                    <p>Belum punya akun? <Link to="/register">REGISTER</Link></p>
                 </Col>
 
             </Row>

@@ -52,7 +52,7 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2>Data Mahasiswa</h2>
+                <h2>Data Anggota Perpustakaan </h2>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>

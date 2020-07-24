@@ -40,7 +40,7 @@ class TambahComp extends PureComponent {
  render() {
         return (
             <Container>
-                <h4>Form Tambah Data</h4>
+                <h4>Form Tambah Data Anggota Perpustakaan</h4>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>

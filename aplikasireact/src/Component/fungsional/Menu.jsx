@@ -1,21 +1,15 @@
-import React from 'react';
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
-import NavbarComp from './NavbarComp'
-import Home from './Home'; 
-import AboutComp from './AboutComp';
-import ListComp from './ListComp';
-import HooksUseEffects from './HooksUseEffects';
+import React, { useContext } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { AuthContext } from '../../App';
+
 const Menu = () => {
+  const { state, dispatch } = useContext(AuthContext)
   return (
-  <BrowserRouter >
-    <NavbarComp/>
-    <Switch >
-    <Route exact path="/" component={Home} />
-    <Route exact path="/Menu" component={AboutComp} />
-    <Route exact path="/mahasiswa"component={ListComp}/> 
-    <Route exact path="/data"component={HooksUseEffects}/>
+    <BrowserRouter >
+      <Switch >
+
       </Switch>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 export default Menu;

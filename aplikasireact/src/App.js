@@ -1,9 +1,15 @@
 import React, { useReducer, createContext } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import NavbarComp from './Component/fungsional/NavbarComp';
+import Home from './Component/fungsional/Home';
+import AboutComp from './Component/fungsional/AboutComp';
+import ListComp from './Component/fungsional/ListComp';
+import HooksUseEffects from './Component/fungsional/HooksUseEffects';
 import LoginComp from './Component/Hooks/LoginComp';
 import RegisterComp from './Component/Hooks/RegisterComp';
-import Home from './Component/fungsional/Home';
-import Menu from './Component/fungsional/Menu';
+
+
+
 export const AuthContext = createContext()
 
 const initialState = {
@@ -23,25 +29,20 @@ const reducer = (state, action) => {
         isAuthenticated: true,
         user: action.payload.user
       }
-    case "LOGOUT":
-      localStorage.clear()
-      return {
-        ...state,
-        isAuthenticated: false,
-        user: action.payload.user
-      }
+    
     default:
       return state
 
   }
 }
 
-function App() {
+const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
+    
     <BrowserRouter >
-      
+    <NavbarComp />
       <Switch >
         <AuthContext.Provider value={{
           state,
@@ -53,17 +54,33 @@ function App() {
               to={{
                 pathname: "/login"
               }}
-            /> :
+            /> : 
             <Redirect
               to={{
-                pathname: "/menu"
+                pathname: "/"
 
-              }}
-            />
+              }}     
+            /> &&
+            <Redirect
+              to={{
+                pathname: "/Menu",
+
+              }}  
+              /> &&
+              <Redirect
+                to={{
+                  pathname: "/mahasiswa",
+  
+                }}  
+                />
           }
           <Route exact path="/login" component={LoginComp} />
           <Route exact path="/register" component={RegisterComp} />
-          <Route exact path="/menu" component={Menu} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Menu" component={AboutComp} />
+          <Route exact path="/mahasiswa" component={ListComp} />
+          <Route exact path="/data" component={HooksUseEffects} />
+          <Route exact path="/Nav" component={NavbarComp} />
         </AuthContext.Provider>
       </Switch>
     </BrowserRouter>
