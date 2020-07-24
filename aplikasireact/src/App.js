@@ -11,6 +11,7 @@ import './App.css';
 import Aktivitas from './Component/fungsional/Aktivitas';
 import LoginComp from './Component/Hooks/LoginComp';
 import RegisterComp from './Component/Hooks/RegisterComp';
+import HomePage from './Component/fungsional/HomePage';
 export const AuthContext = createContext()
 
 //inisiasi state
@@ -79,6 +80,7 @@ function App () {
         <Route exact path="/menu/edit" component={EditComp} />
         <Route exact path="/menu" component={ListComp} />
         <Route exact path="/home" component={Home} />
+        <Route exact path="/utama" component={HomePage} />
         </AuthContext.Provider>
       </Switch>
     </BrowserRouter>

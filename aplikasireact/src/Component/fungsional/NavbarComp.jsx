@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink to="/home" className="nav-link">HOME</NavLink>
+                            <NavLink to="/utama" className="nav-link">HOME</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink to="/login" className="nav-link" >LOGIN</NavLink>
